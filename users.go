@@ -4,7 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 	"time"
-	"uuid"
+
+	"github.com/google/uuid"
 )
 
 type User struct {

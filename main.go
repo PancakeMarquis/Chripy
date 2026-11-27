@@ -49,8 +49,8 @@ func main() {
 	serverMux.HandleFunc("GET /api/healthz", handlerReadiness)
 	serverMux.HandleFunc("GET /admin/metrics", apiCfg.handlerMetrics)
 	serverMux.HandleFunc("POST /admin/reset", apiCfg.handlerReset)
-	serverMux.HandleFunc("POST /api/validate_chirp", handlerChripsValidate)
 	serverMux.HandleFunc("POST /api/users", apiCfg.handlerCreateUser)
+	serverMux.HandleFunc("POST /api/chirps", apiCfg.handlerCreateChirp)
 
 	log.Printf("Serving files from %s on port: %s\n", filepathRoot, port)
 	log.Fatal(serv.ListenAndServe())
